@@ -34,4 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
         btnGrammar.classList.toggle('bg-amber-500', !isGrammarVisible);
         btnGrammar.classList.toggle('text-white', !isGrammarVisible);
     });
+
+    // Load Lesson 2 after the existing Lesson 1 content.
+    const main = document.querySelector('main');
+    if (main) {
+        fetch('lesson2.html')
+            .then(response => {
+                if (!response.ok) throw new Error(`Lesson 2 load failed: ${response.status}`);
+                return response.text();
+            })
+            .then(html => {
+                main.insertAdjacentHTML('beforeend', html);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
 });
