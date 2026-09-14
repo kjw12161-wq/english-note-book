@@ -35,7 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
         btnGrammar.classList.toggle('text-white', !isGrammarVisible);
     });
 
-    // Load Lesson 2 after the existing Lesson 1 content.
+    // Load Lesson 2 stylesheet and content after the existing Lesson 1 content.
+    const lesson2Styles = document.createElement('link');
+    lesson2Styles.rel = 'stylesheet';
+    lesson2Styles.href = 'lesson2.css';
+    document.head.appendChild(lesson2Styles);
+
     const main = document.querySelector('main');
     if (main) {
         fetch('lesson2.html')
