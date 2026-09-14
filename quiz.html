@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영어 단어시험 - Lesson 1 & 2</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="text-gray-800">
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <h1>English Study Note</h1>
+        <p>Lesson 1 · Lesson 2 단어시험</p>
+      </div>
+      <nav class="page-nav">
+        <a href="index.html">레슨 목록</a>
+        <a href="lesson1.html">Lesson 1</a>
+        <a href="lesson2.html">Lesson 2</a>
+        <a class="active" href="quiz.html">단어시험</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quiz-shell">
+    <section class="quiz-hero">
+      <div style="font-size:.8rem;font-weight:900;letter-spacing:.12em;opacity:.8;">VOCABULARY TEST</div>
+      <h2 style="font-size:2rem;font-weight:900;margin-top:.4rem;">Lesson 1 · 2 단어시험</h2>
+      <p style="margin-top:.65rem;line-height:1.7;opacity:.92;">각 본문에서 중요한 단어와 외워야 할 어려운 단어를 골라 빈칸 문제로 구성했습니다.</p>
+      <div class="quiz-meta">
+        <span class="meta-pill">총 20문제</span>
+        <span class="meta-pill">제한시간 25분</span>
+        <span class="meta-pill">1문제 1점</span>
+      </div>
+    </section>
+
+    <div class="timer-bar">
+      <strong>남은 시간</strong>
+      <span id="timer" class="timer">25:00</span>
+    </div>
+
+    <form id="quiz" novalidate></form>
+
+    <div class="submit-row">
+      <button id="submit-quiz" class="submit-btn" type="button">시험 제출하고 채점하기</button>
+    </div>
+
+    <section id="result" class="result" aria-live="polite"></section>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
