@@ -27,12 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keep Lesson navigation consistent across all lesson pages.
     const nav = document.querySelector('.page-nav');
     if (nav) {
-        const existing = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson3.html');
-        if (!existing) {
+        const lesson3Exists = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson3.html');
+        if (!lesson3Exists) {
             const lesson3 = document.createElement('a');
             lesson3.href = 'lesson3.html';
             lesson3.textContent = 'Lesson 3';
             nav.appendChild(lesson3);
+        }
+
+        const lesson4Exists = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson4.html');
+        if (!lesson4Exists) {
+            const lesson4 = document.createElement('a');
+            lesson4.href = 'lesson4.html';
+            lesson4.textContent = 'Lesson 4';
+            nav.appendChild(lesson4);
         }
     }
 });
