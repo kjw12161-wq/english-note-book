@@ -23,4 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
             btnGrammar.textContent = isGrammarVisible ? '문법 숨기기' : '문법 보기';
         });
     }
+
+    // Keep Lesson navigation consistent across all lesson pages.
+    const nav = document.querySelector('.page-nav');
+    if (nav) {
+        const existing = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson3.html');
+        if (!existing) {
+            const lesson3 = document.createElement('a');
+            lesson3.href = 'lesson3.html';
+            lesson3.textContent = 'Lesson 3';
+            nav.appendChild(lesson3);
+        }
+    }
 });
