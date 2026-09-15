@@ -24,23 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Keep Lesson navigation consistent across all lesson pages.
+    // 모든 페이지의 상단 바로가기 메뉴를 이 한 곳에서 관리합니다.
+    // 앞으로 메뉴를 추가/수정할 때 각 HTML을 하나씩 고칠 필요가 없습니다.
     const nav = document.querySelector('.page-nav');
     if (nav) {
-        const lesson3Exists = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson3.html');
-        if (!lesson3Exists) {
-            const lesson3 = document.createElement('a');
-            lesson3.href = 'lesson3.html';
-            lesson3.textContent = 'Lesson 3';
-            nav.appendChild(lesson3);
-        }
+        const links = [
+            ['index.html', '레슨 목록'],
+            ['lesson1.html', 'Lesson 1'],
+            ['lesson2.html', 'Lesson 2'],
+            ['lesson3.html', 'Lesson 3'],
+            ['lesson4.html', 'Lesson 4'],
+            ['quiz.html', '단어시험']
+        ];
 
-        const lesson4Exists = [...nav.querySelectorAll('a')].some((link) => link.getAttribute('href') === 'lesson4.html');
-        if (!lesson4Exists) {
-            const lesson4 = document.createElement('a');
-            lesson4.href = 'lesson4.html';
-            lesson4.textContent = 'Lesson 4';
-            nav.appendChild(lesson4);
-        }
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        nav.innerHTML = links.map(([href, label]) => {
+            const active = href === currentPage ? ' class="active"' : '';
+            return `<a href="${href}"${active}>${label}</a>`;
+        }).join('');
     }
 });
