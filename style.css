@@ -74,7 +74,8 @@ body {
   .lesson2-hero > p { font-size:.92rem; }
   .core-box { padding:.85rem; font-size:.9rem; }
   .study-card { border-radius:1rem; }
-  .controls { position:sticky; top:71px; padding:.7rem; justify-content:stretch; }
+  /* 모바일에서는 헤더와 학습카드 내부의 sticky 요소가 서로 겹쳐 본문 첫 부분을 가리지 않도록 고정 해제 */
+  .controls { position:static; top:auto; z-index:auto; padding:.7rem; justify-content:stretch; }
   .controls button { flex:1; min-width:0; padding:.6rem .5rem; font-size:.78rem; }
   .study-list { padding:.75rem 1rem 1.5rem; }
   .study-item { gap:.6rem; padding:1rem 0; }
