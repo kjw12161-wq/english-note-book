@@ -45,5 +45,16 @@ body {
 .grammar-text { margin-top:.75rem; background:#fffbeb; border-left:4px solid #fbbf24; padding:.85rem 1rem; border-radius:0 .75rem .75rem 0; color:#78350f; font-size:.875rem; line-height:1.7; }
 .grammar-label { color:#d97706; font-weight:900; }
 
+.lesson-home-card { display:block; text-decoration:none; background:#fff; border:1px solid #e5e7eb; border-radius:1.1rem; padding:1.5rem; box-shadow:0 8px 20px rgb(15 23 42 / .06); color:inherit; transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease; }
+.lesson-home-card:hover { transform:translateY(-3px); box-shadow:0 14px 28px rgb(15 23 42 / .10); border-color:#c7d2fe; }
+.lesson-card-kicker { font-size:.78rem; font-weight:900; letter-spacing:.1em; }
+.lesson1-kicker { color:#4f46e5; }
+.lesson2-kicker { color:#7c3aed; }
+.lesson3-kicker { color:#0f766e; }
+.lesson-home-card h3 { font-size:1.35rem; font-weight:900; margin:.45rem 0; }
+.lesson-home-card p { color:#6b7280; line-height:1.6; margin:0; }
+.lesson-card-link { margin-top:1rem; color:#4338ca; font-weight:800; }
+.quiz-home-card { border-color:#c4b5fd; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
 @media (max-width:700px) { .header-inner { flex-direction:column; align-items:flex-start; } .page-nav { justify-content:flex-start; } .lesson-page { padding-top:1rem; } .lesson2-hero { padding:1.35rem; } .study-list { padding:1rem; } .study-item { gap:.65rem; } .sentence { font-size:1rem; } .controls { top:150px; } }
