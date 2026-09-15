@@ -1,25 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Lesson 3: 10문제 + Lesson 4: 10문제
+  // 본문에서 핵심 내용 이해에 중요하거나 암기할 가치가 높은 어휘를 선정했습니다.
   const questions = [
-    {lesson:'Lesson 1', n:4, sentence:'They are on their way / to visit the homes of children / ________ from a deadly disease / called pertussis.', answer:'suffering', ko:'그들은 가는 길이다 / 아이들의 집을 방문하러 / 치명적인 병을 앓고 있는 / 백일해라고 불리는.'},
-    {lesson:'Lesson 2', n:1, sentence:'When we think about science, / we might consider it as a domain / ________ exclusively for scientists / in long, white lab coats / who spend their days / conducting experiments and analyzing data.', answer:'reserved', ko:'우리가 과학에 대해 생각할 때, / 우리는 그것을 하나의 영역으로 여길지 모른다 / 과학자들만을 위해 마련된 / 길고 흰 실험복을 입은 / 자신의 하루하루를 보내는 / 실험을 수행하고 데이터를 분석하며.'},
-    {lesson:'Lesson 1', n:7, sentence:'Pertussis is a bacterial disease / ________ by serious coughing, breathing difficulties, / and the high-pitched "whooping" sound / that people with the disease make / as they try to breathe in.', answer:'characterized', ko:'백일해는 세균성 질병이다 / 심한 기침과 호흡 곤란을 특징으로 하는 / 그리고 높은 음의 소리를 / 그 병에 걸린 사람들이 내는 / 숨을 들이쉬려 할 때.'},
-    {lesson:'Lesson 2', n:7, sentence:'Kevin Schawinski was a young astronomy researcher / ________ black holes and the evolution of galaxies / at the University of Oxford.', answer:'studying', ko:'Kevin Schawinski는 젊은 천문학 연구자였다 / 블랙홀과 은하의 진화를 연구하던 / 옥스퍼드 대학교에서.'},
-    {lesson:'Lesson 1', n:12, sentence:'The cause of the disease / had been identified in 1906, / but the vaccines that had been developed / were ________.', answer:'ineffective', ko:'그 병의 원인은 / 1906년에 밝혀졌다, / 그러나 개발되었던 백신들은 / 효과가 없었다.'},
-    {lesson:'Lesson 2', n:9, sentence:'He had to ________ / around one million images of galaxies / according to their shape.', answer:'classify', ko:'그는 분류해야 했다 / 약 백만 장의 은하 이미지를 / 그 모양에 따라.'},
-    {lesson:'Lesson 1', n:13, sentence:'Scientists and researchers worked for more than 20 years / to produce an effective one, / but their efforts were ________—until Kendrick and Eldering came along.', answer:'fruitless', ko:'과학자와 연구자들은 20년 넘게 애썼다 / 효과적인 백신을 만들어 내려고, / 그러나 그들의 노력은 결실이 없었다 — Kendrick과 Eldering이 등장하기 전까지는.'},
-    {lesson:'Lesson 2', n:15, sentence:'Lintott ________ / that he turn to the Internet / to ask other people for help.', answer:'suggested', ko:'Lintott는 제안했다 / 그가 인터넷에 의지해 볼 것을 / 다른 사람들에게 도움을 청하기 위해.'},
-    {lesson:'Lesson 1', n:15, sentence:'It was there / that she met fellow ________ Grace Eldering.', answer:'bacteriologist', ko:'바로 그곳에서였다 / 그녀가 동료 세균학자 Grace Eldering을 만난 것은.'},
-    {lesson:'Lesson 2', n:17, sentence:'The website was kept as simple as possible, / with a very basic design and an ________ interface.', answer:'easy-to-use', ko:'그 웹사이트는 가능한 한 단순하게 유지되었다, / 매우 기본적인 디자인과 사용하기 쉬운 인터페이스로.'},
-    {lesson:'Lesson 1', n:23, sentence:'The difficulties they faced / did not stop them / from ________ toward their goal.', answer:'persisting', ko:'그들이 마주한 어려움들도 / 그들을 막지 못했다 / 목표를 향해 계속 나아가는 것을.'},
-    {lesson:'Lesson 2', n:26, sentence:'In a year and a half, / more than 80,000 individuals ________, / and they made more than 75 million classifications.', answer:'participated', ko:'1년 반 만에, / 8만 명이 넘는 사람들이 참여했다, / 그리고 그들은 7,500만 건이 넘는 분류를 해냈다.'},
-    {lesson:'Lesson 1', n:27, sentence:'The patients coughed onto a petri dish, / which was then put into an ________.', answer:'incubator', ko:'환자들이 페트리 접시에 대고 기침을 했다, / 그리고 그것은 그 다음 배양기에 넣어졌다.'},
-    {lesson:'Lesson 2', n:41, sentence:'Unsure of what they were, / the group decided to name the ________ "Steve," / based on a scene from an animated movie / where some characters give that name to an unfamiliar object.', answer:'phenomenon', ko:'그것들이 무엇인지 확신하지 못한 채, / 그 모임은 그 현상을 ‘Steve’라고 이름 짓기로 했다 / 한 애니메이션 영화의 장면에 착안하여.'},
-    {lesson:'Lesson 1', n:43, sentence:'Eleanor Roosevelt, / whose husband suffered from polio, / was interested in ________ infectious diseases.', answer:'fighting', ko:'Eleanor Roosevelt는, / 그런데 그녀의 남편이 소아마비를 앓았고, / 전염병과 싸우는 일에 관심이 있었다.'},
-    {lesson:'Lesson 2', n:45, sentence:'They confirmed that it was not an aurora, / but it did not ________ anything / they had seen before.', answer:'resemble', ko:'그들은 그것이 오로라가 아니라는 것을 확인해 주었다, / 그러나 그것은 어떤 것과도 닮지 않았다 / 그들이 이전에 본.'},
-    {lesson:'Lesson 1', n:51, sentence:'Kendrick and Eldering were often told / that they could have become very wealthy / if they had ________ their vaccine.', answer:'patented', ko:'Kendrick과 Eldering은 자주 들었다 / 그들이 아주 부자가 될 수도 있었을 것이라는 말을 / 만약 백신에 특허를 냈더라면.'},
-    {lesson:'Lesson 2', n:52, sentence:'Experts have ________ / that it is the dedicated members of the aurora chasers group / that deserve the credit for discovering STEVE.', answer:'acknowledged', ko:'전문가들은 인정해 왔다 / 바로 그 헌신적인 오로라 추적자 모임의 회원들이 / STEVE를 발견한 공로를 받아 마땅하다는 것을.'},
-    {lesson:'Lesson 1', n:68, sentence:'The original idea behind the World Wide Web / was to make it easier / for scientists from different universities / to share information and ________ with one another.', answer:'communicate', ko:'월드 와이드 웹에 담긴 원래의 발상은 / 더 쉽게 만드는 것이었다 / 서로 다른 대학의 과학자들이 / 정보를 공유하고 서로 소통하는 것을.'},
-    {lesson:'Lesson 2', n:60, sentence:'The next great scientific achievement could be made / by citizen scientists ________ their time / for the purpose of better understanding the world.', answer:'volunteering', ko:'다음번의 위대한 과학적 성취는 이루어질 수도 있다 / 자신의 시간을 기꺼이 내어 주는 시민 과학자들에 의해 / 세상을 더 잘 이해하기 위해.'}
+    // Lesson 3
+    {lesson:'Lesson 3', n:1, sentence:'We make many personal choices / in our lives, / from who to have lunch with / to what career to ________.', answer:'pursue', ko:'우리는 많은 개인적인 선택을 한다 / 우리 삶에서, / 누구와 점심을 먹을지부터 / 어떤 진로를 추구할지까지.'},
+    {lesson:'Lesson 3', n:3, sentence:'Group decision-making is not as simple / as our personal choices, / as it involves numerous voices / with ________ opinions.', answer:'differing', ko:'집단의 의사결정은 간단하지 않다 / 우리의 개인적인 선택만큼, / 그것이 수많은 목소리를 포함하기 때문에 / 다른 의견을 가진.'},
+    {lesson:'Lesson 3', n:7, sentence:'When they asked for advice / from Ms. Akers, the council’s advisor, / she ________ them / not to use the familiar voting method, / but to try something different instead.', answer:'encouraged', ko:'그들이 조언을 구했을 때 / 학생회 고문인 Akers 선생님에게, / 그녀는 그들에게 권장했다 / 익숙한 투표 방식을 사용하지 말고, / 대신 뭔가 다른 것을 시도해 보라고.'},
+    {lesson:'Lesson 3', n:10, sentence:'Each of the 20 council members / was given a voting slip / and instructed to write down the options / in order of ________.', answer:'preference', ko:'20명의 학생회 임원 각각은 / 투표용지를 받았다 / 그리고 선택지들을 적으라고 지시받았다 / 선호하는 순서대로.'},
+    {lesson:'Lesson 3', n:12, sentence:'Voters are given several options, / and ________ gets the most first-preference votes / wins.', answer:'whichever', ko:'유권자들에게는 여러 선택지가 주어진다, / 그리고 가장 많은 1순위 표를 얻는 것이 무엇이든 / 이긴다.'},
+    {lesson:'Lesson 3', n:13, sentence:'Neither the second nor third preference / matters at all, / so they are ________.', answer:'ignored', ko:'2순위도 3순위도 / 전혀 중요하지 않다, / 그래서 그것들은 무시된다.'},
+    {lesson:'Lesson 3', n:16, sentence:'However, only 8 out of 20 council members / chose the charity concert / as their first preference, / which equaled 40% of the total ________.', answer:'votes', ko:'하지만, 20명의 학생회 임원 중 겨우 8명만이 / 자선 콘서트를 선택했다 / 그들의 1순위로, / 그리고 그것은 전체 표의 40%와 같았다.'},
+    {lesson:'Lesson 3', n:17, sentence:'The alternative vote method / takes voters’ second and third choices / into ________.', answer:'account', ko:'대안 투표제는 / 유권자들의 2순위와 3순위 선택을 / 고려한다.'},
+    {lesson:'Lesson 3', n:23, sentence:'After the first round, / the option with the fewest votes is eliminated, / and its supporters’ next choices / are ________ to their ballots.', answer:'added', ko:'첫 번째 라운드 후 / 가장 적은 표를 받은 선택지는 제거되고, / 그 지지자들의 다음 선택이 / 그들의 투표에 추가된다.'},
+    {lesson:'Lesson 3', n:30, sentence:'The Condorcet method can identify / the option that would defeat every other option / in a series of one-on-one ________.', answer:'comparisons', ko:'콩도르세 방법은 식별할 수 있다 / 다른 모든 선택지를 이길 선택지를 / 일대일 비교의 연속에서.'},
+
+    // Lesson 4
+    {lesson:'Lesson 4', n:1, sentence:'On her way to a study group meeting, / Liz accidentally dropped her laptop on the street, / seriously ________ it.', answer:'damaging', ko:'스터디 그룹 모임에 가는 길에, / Liz는 실수로 길에 노트북을 떨어뜨렸다, / 그리고 그것을 심하게 파손시켰다.'},
+    {lesson:'Lesson 4', n:3, sentence:'In this case, / getting rid of the old one / and purchasing a new one / might seem like a more reasonable ________.', answer:'option', ko:'이 경우, / 낡은 것을 버리고 / 새것을 구매하는 것이 / 더 합리적인 선택처럼 보일지도 모른다.'},
+    {lesson:'Lesson 4', n:5, sentence:'Due to toxic materials / contained in these products, / such as lead, / e-waste is a serious health and environmental ________.', answer:'hazard', ko:'독성 물질 때문에 / 이 제품들에 포함된, / 납과 같은, / 전자폐기물은 건강과 환경에 심각한 위험 요소이다.'},
+    {lesson:'Lesson 4', n:7, sentence:'Experts predict / that by 2030, / the amount of e-waste generated annually / will have ________ in just 16 years.', answer:'doubled', ko:'전문가들은 예측한다 / 2030년쯤에는, / 매년 발생하는 전자폐기물의 양이 / 불과 16년 만에 두 배가 될 것이라고.'},
+    {lesson:'Lesson 4', n:10, sentence:'For example, / a device may be difficult to ________, / or its manufacturer may require / that it be brought to an official service center / to be fixed.', answer:'disassemble', ko:'예를 들어, / 기기를 분해하기 어려울 수도 있다, / 혹은 제조사가 요구할 수도 있다 / 수리받기 위해서는 공식 서비스 센터로 가져와야 한다고.'},
+    {lesson:'Lesson 4', n:13, sentence:'The right-to-repair movement is trying / to solve these problems / by promoting ________ / that states the following:', answer:'legislation', ko:'수리할 권리 운동은 노력하고 있다 / 이러한 문제들을 해결하려고 / 법률 제정을 촉진함으로써 / 다음과 같이 명시하는:'},
+    {lesson:'Lesson 4', n:17, sentence:'In January 2021, / the French government passed a bill / that requires / that every manufacturer include a "repairability ________" / on five categories of electronic devices and electrical appliances:', answer:'index', ko:'2021년 1월, / 프랑스 정부는 법안을 통과시켰다 / 요구하는 / 모든 제조사가 ' + "'" + '수리 용이성 지수' + "'" + '를 포함해야 한다고 / 5개 범주의 전자 기기 및 가전제품에:'},
+    {lesson:'Lesson 4', n:19, sentence:'The index takes into account several ________, / including the availability of repair information, / the ease of disassembly, / and the price of spare parts.', answer:'elements', ko:'그 지수는 몇 가지 요소를 고려한다, / 수리 정보의 이용 가능성, / 분해의 용이성, / 그리고 여분 부품의 가격을 포함하여.'},
+    {lesson:'Lesson 4', n:26, sentence:'By providing spaces / where people can learn, / Repair Cafés enable individuals / to maintain their devices / and extend their life ________.', answer:'spans', ko:'공간을 제공함으로써 / 사람들이 배울 수 있는, / 수리 카페는 개인들이 ~할 수 있게 해 준다 / 기기를 유지보수하고 / 수명을 연장할 수 있게.'},
+    {lesson:'Lesson 4', n:30, sentence:'Even more importantly, / it is a future in which people will generate far less e-waste, / making our planet a cleaner, healthier place for ________.', answer:'everyone', ko:'훨씬 더 중요한 것은, / 그것은 사람들이 전자폐기물을 훨씬 덜 발생시킬 미래라는 것이다, / 우리 지구를 모두에게 더 깨끗하고 더 건강한 곳으로 만들면서.'}
   ];
 
   const quiz = document.getElementById('quiz');
@@ -37,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
       <div class="question-number">QUESTION ${String(i + 1).padStart(2, '0')}</div>
       <div class="source-tag">${q.lesson} · 문장 #${q.n}</div>
-      <div class="sentence">${q.sentence.replace('________', '<span class="blank">&nbsp;</span>')}</div>
+      <div class="sentence">${q.sentence.replace('______', '<span class="blank">&nbsp;</span>')}</div>
       <div class="korean">${q.ko}</div>
       <input class="answer-input" type="text" autocomplete="off" spellcheck="false" placeholder="빈칸에 들어갈 영어 단어를 입력하세요" aria-label="${i + 1}번 정답">
     `;
